@@ -1,0 +1,137 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.875rem;
+
+  /* Farm Buddy brand palette: deep forest + fresh leaf greens, warm soil
+     accent, harvest gold, and a warm paper-neutral base. Chosen to read as
+     "agritech dashboard", not a generic SaaS or government portal. */
+  --background: #f7f6ef;
+  --foreground: #17201a;
+
+  --card: #ffffff;
+  --card-foreground: #17201a;
+
+  --popover: #ffffff;
+  --popover-foreground: #17201a;
+
+  --primary: #1f4a3d;
+  --primary-foreground: #f4f7f2;
+
+  --secondary: #eaf1e6;
+  --secondary-foreground: #1f4a3d;
+
+  --muted: #eeece1;
+  --muted-foreground: #5c6459;
+
+  --accent: #5b9c59;
+  --accent-foreground: #102015;
+
+  --harvest: #d98b2b;
+  --harvest-foreground: #2a1a04;
+
+  --soil: #8a5a34;
+  --soil-foreground: #f4f7f2;
+
+  --destructive: #b3432f;
+  --destructive-foreground: #f4f7f2;
+
+  --border: #dedac9;
+  --input: #dedac9;
+  --ring: #5b9c59;
+}
+
+.dark {
+  --background: #10140f;
+  --foreground: #eef2ea;
+
+  --card: #161c14;
+  --card-foreground: #eef2ea;
+
+  --popover: #161c14;
+  --popover-foreground: #eef2ea;
+
+  --primary: #7fbf83;
+  --primary-foreground: #10240f;
+
+  --secondary: #1d281c;
+  --secondary-foreground: #cfe6cc;
+
+  --muted: #1d221b;
+  --muted-foreground: #9aa593;
+
+  --accent: #7fbf83;
+  --accent-foreground: #10240f;
+
+  --harvest: #e6a54a;
+  --harvest-foreground: #241701;
+
+  --soil: #b98a5f;
+  --soil-foreground: #1a1108;
+
+  --destructive: #d9694f;
+  --destructive-foreground: #200907;
+
+  --border: #263023;
+  --input: #263023;
+  --ring: #7fbf83;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-harvest: var(--harvest);
+  --color-harvest-foreground: var(--harvest-foreground);
+  --color-soil: var(--soil);
+  --color-soil-foreground: var(--soil-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-sans: "Inter Variable", "Inter", ui-sans-serif, system-ui,
+    sans-serif;
+  --font-display: "Plus Jakarta Sans Variable", "Plus Jakarta Sans",
+    ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 0.375rem);
+  --radius-md: calc(var(--radius) - 0.125rem);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 0.375rem);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+}
